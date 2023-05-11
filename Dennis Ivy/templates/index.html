@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<script>
+    let url = `ws://${window.location.host}/ws/chat/`;
+    const chatSocket = new WebSocket(url);
+    chatSocket.onmessage = function(e) {
+    let data = JSON.parse(e.data);
+    console.log('data', data);
+    console.log(url);
+    };
+</script>
+</html>
